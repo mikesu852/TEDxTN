@@ -1,0 +1,21 @@
+<div class="container-fluid activities">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <% @activities.each do |activity| %>
+        <div class="activity">
+          <%= link_to image_tag(activity.thumb.url(:large),:class =>'activity-img') , activity %>
+          <div class="activity-content">
+            <div class="activity-content-title h1"><%= activity.title %>
+              <span class="activity-content-category h4"><%= activity.category %></span>
+            </div>
+            <div class="activity-content-date h4"><%= activity.date.strftime('%Y/%m/%d') %></div>
+            <div class="activity-content-place h4"><%= activity.place %></div>
+            <hr style="border-color:rgb(252,46,31);">
+            <div class="activity-content-summary h4"><%= activity.summary %></div>
+            <%= link_to '更多資訊',activity ,:id => 'activity-content-morebtn',:class => 'h4' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

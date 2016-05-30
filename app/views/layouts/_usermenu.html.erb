@@ -1,0 +1,18 @@
+<div class="navbar-default">
+    <div class="container-fluid" style="padding-top:0;padding-bottom:0px;">
+        <div>
+            <%= link_to image_tag(current_user.avatar.url(:thumb),:id =>'menu-avatar'), user_path(current_user) %>
+            <ul class="nav navbar-nav">
+            	<li><a>歡迎 <%= current_user.name %></a></li>
+                <li><%= link_to '個人資料', user_path(current_user) %></li>
+                <li><%= link_to '文章/活動管理', users_path %></li>
+                <li><%= link_to '發表文章', new_article_path %></li>
+                <li><%= link_to '發表活動', new_activity_path %></li>
+                <li><%= link_to '發表影片', new_film_path %></li>
+                <li><%= link_to '上傳圖片', new_picture_path %></li>
+                <li><%= link_to '圖片庫', pictures_path %></li>
+                <li><%= link_to "登出",logout_path,method: :delete %></li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+// Place all the styles related to the activities controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.activities{
+  background:rgb(255,255,255);
+}
+
+.activity{
+  position:relative;
+  width:100%;
+  font-size:0px;
+  margin:80px auto;
+}
+
+.activity-img,.activity-content{
+  display:inline-block;
+}
+
+.activity-img{
+  width:65%;
+}
+
+.activity-content{
+  padding:20px 15px;
+  color:black;
+  position:absolute;
+  width:35%;
+  height:100%;
+  background:rgb(240,240,240);
+  overflow:scroll;
+}
+
+.activity-content-category{
+  border:1px solid;
+  padding:2px 4px;
+}
+.activity-content-title,.activity-content-date,.activity-content-place{
+  padding-bottom:5px;
+}
+
+#activity-content-morebtn{
+  display:block;
+  width:40%;
+  margin-top:20px;
+  padding:5px 5px;
+  text-align:center;
+  border:1px solid;
+  float:right;
+}
+
+@media screen and (max-width:768px){
+  .activity-img{
+    width:100%;
+  }
+
+  .activity-content{
+    width:100%;
+    position:relative;
+  }
+
+  #activity-content-morebtn{
+      width:120px;
+      float:none;
+      margin:20px auto 0px auto;
+  }
+}

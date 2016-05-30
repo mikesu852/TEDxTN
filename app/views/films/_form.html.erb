@@ -1,0 +1,56 @@
+<% if @film.errors.count > 0 %>
+	<p class="alert alert-warning formalert">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<% @film.errors.each do |attr,msg|  %>
+			<%= msg %><br>
+		<% end %>
+	</p>
+<% end %>
+
+<%= form_for @film, :html => {:class => "form"} do |f| %>
+	<div class="form-group">
+		<%= f.label :title, '標題: ' %>
+		<%= f.text_field :title , :class =>"form-control" %><br><br>
+	</div>
+	<div class="form-group">
+		<%= f.label :event, '活動名稱: ' %>
+		<%= f.text_field :event , :class =>"form-control" %><br><br>
+	</div>
+	<div class="form-group">
+		<%= f.label :category, '分類: ' %>
+		<%= f.text_field :category , :class =>"form-control" %><br><br>
+	</div>
+  <div class="form-group">
+    <%= f.label :year, '年份: ' %>
+    <%= f.text_field :year , :class =>"form-control" %><br><br>
+  </div>
+	<div class="form-group">
+		<%= f.label :summary, '摘要: ' %>
+		<%= f.text_area :summary, :class =>"form-control" ,:id => 'textarea'%><br>
+		<p>目前 <span id="count">0</span> 字</p><br><br>
+	</div>
+  <div class="form-group">
+    <%= f.label :url, '連結: ' %>
+    <%= f.text_field :url , :class =>"form-control" %><br><br>
+  </div>
+	<div class="form-group">
+		<%= f.submit '建立', :class =>"btn btn-default" %>
+	</div>
+<% end %>
+
+
+<script>
+	$(document).ready(function () {
+			var area = document.getElementById('textarea');
+			var count = document.getElementById('count');
+			Countable.live(area, function (counter) {
+				if(counter['all']>150){
+					count.style.color = 'red';
+				}
+				else {
+					count.style.color = 'black';
+				}
+  			count.innerHTML=counter['all'];
+			})
+	});
+</script>

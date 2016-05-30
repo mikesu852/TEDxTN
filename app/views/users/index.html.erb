@@ -1,0 +1,82 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="h1 text-center">文章管理</h1><br>
+			<table class="table table-bordered text-center">
+				<tr>
+					<th>標題</th>
+					<th>分類</th>
+					<th>瀏覽量</th>
+					<th>作者</th>
+					<th>發表日期</th>
+					<th>狀態</th>
+					<th>管理</th>
+				</tr>
+			<% @article.each do |article| %>
+				<tr id="<%= dom_id article %>">
+					<td><%= link_to article.title,article %></td>
+					<td><%= article.category %></td>
+					<td><%= article.views %></td>
+					<td><%= link_to article.user.name,article.user %></td>
+					<td><%= article.created_at.strftime("%Y/%m/%d") %></td>
+					<td>
+						<% if article.status == 0 %>
+							開放
+						<% else %>
+							關閉
+						<% end %>
+					</td>
+					<td>
+						<%= link_to '刪除', article_path(article),:class => "btn btn-default", method: :delete,remote: true,data: { confirm: "確定刪除嗎?" } %>
+                        <%= link_to '編輯', edit_article_path(article),:class => "btn btn-default" %>
+                        <% if article.status == 0 %>
+                        	<%= link_to '關閉', close_article_path(article),method: :put, :class => "btn btn-default" %>
+                        <% else %>
+							<%= link_to '開啟', open_article_path(article),method: :put,:class => "btn btn-default" %>
+                        <% end %>
+                    </td>
+				</tr>
+			<% end %>
+			</table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="h1 text-center">活動管理</h1><br>
+			<table class="table table-bordered text-center">
+				<tr>
+					<th>標題</th>
+					<th>分類</th>
+					<th>瀏覽量</th>
+					<th>發表日期</th>
+					<th>狀態</th>
+					<th>管理</th>
+				</tr>
+			<% @activities.each do |activity| %>
+				<tr id="<%= dom_id activity %>">
+					<td><%= link_to activity.title,activity %></td>
+					<td><%= activity.category %></td>
+					<td><%= activity.views %></td>
+					<td><%= activity.date.strftime("%Y/%m/%d") %></td>
+					<td>
+						<% if activity.status == 0 %>
+							開放
+						<% else %>
+							關閉
+						<% end %>
+					</td>
+					<td>
+						<%= link_to '刪除', activity_path(activity),:class => "btn btn-default", method: :delete,remote: true,data: { confirm: "確定刪除嗎?" } %>
+            <%= link_to '編輯', edit_activity_path(activity),:class => "btn btn-default" %>
+            <% if activity.status == 0 %>
+            	<%= link_to '關閉', close_activity_path(activity),method: :put, :class => "btn btn-default" %>
+            <% else %>
+							<%= link_to '開啟', open_activity_path(activity),method: :put,:class => "btn btn-default" %>
+            <% end %>
+         </td>
+				</tr>
+			<% end %>
+			</table>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,55 @@
+<div class="navbar" id="mobile-menu">
+  <div class="container-fluid" style="padding-top:0px;padding-bottom:0px;">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to image_tag('menu/tedlogo.png'),root_path, :class => "navbar-brand" %>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><%=link_to '專欄文章', columns_path %></li>
+        <li>
+          <%= link_to '活動資訊', activities_path %>
+        </li>
+        <li>
+          <%= link_to '講者影片', films_path %>
+        </li>
+        <li>
+          <a href="#">關於我們</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="nav-menu" id="desktop-menu">
+  <div class="nav-logo-category">
+    <div class="nav-logo">
+      <%= link_to image_tag('menu/tedlogo.png'),root_path %>
+      <div class="nav-category">
+        <ul class="menu-items">
+          <li class="menu-item">
+            <%=link_to '專欄文章', columns_path %>
+          </li>
+          <li class="menu-item">
+            <%= link_to '活動資訊', activities_path %>
+          </li>
+          <li class="menu-item">
+            <%= link_to '講者影片', films_path %>
+          </li>
+          <li class="menu-item">
+            <a href="">
+              關於我們
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="right">
+        <%= link_to image_tag('menu/icon-fb.png', id:'icon'),'https://www.facebook.com/TEDxTainan' , target: '_blank' %>
+        <%= link_to image_tag('menu/icon-fb.png', id:'icon'),'https://www.facebook.com/TEDxTainan' , target: '_blank' %>
+      </div>
+    </div>
+  </div>
+</div>

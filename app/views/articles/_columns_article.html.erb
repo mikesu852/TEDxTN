@@ -1,0 +1,50 @@
+<% if @articleA %>
+  <div class="columns-article a">
+    <%= link_to image_tag( @articleA.thumb.url(:square) , :class => 'columns-article-img'), @articleA %>
+    <div class="columns-article-content">
+      <p class="h1"><%=link_to @articleA.title,@articleA %></p>
+      <hr style="border-color:black;">
+      <p class="h3"><%= @articleA.summary %></p>
+    </div>
+  </div>
+<% end %>
+<% if @articleB %>
+  <div class="columns-article b">
+    <%= link_to image_tag( @articleB.thumb.url(:square) , :class => 'columns-article-img'), @articleB %>
+    <div class="columns-article-content">
+      <p class="h1"><%=link_to @articleB.title,@articleB %></p>
+      <hr style="border-color:black;">
+      <p class="h3"><%= @articleB.summary %></p>
+    </div>
+  </div>
+<% end %>
+<% if @articleC %>
+  <div class="columns-article c">
+    <%= link_to image_tag( @articleC.thumb.url(:square) , :class => 'columns-article-img'), @articleC %>
+    <div class="columns-article-content">
+      <p class="h1"><%=link_to @articleC.title ,@articleC %></p>
+      <hr style="border-color:black;">
+      <p class="h3"><%= @articleC.summary %></p>
+    </div>
+  </div>
+<% end %>
+<% if @articleD %>
+  <div class="columns-article d">
+    <%= link_to image_tag( @articleD.thumb.url(:square) , :class => 'columns-article-img'), @articleD %>
+    <div class="columns-article-content">
+      <p class="h1"><%=link_to @articleD.title,@articleD %></p>
+      <hr style="border-color:black;">
+      <p class="h3"><%= @articleD.summary %></p>
+    </div>
+  </div>
+<% end %>
+<% if @articleE %>
+  <div class="columns-article e">
+    <%= link_to image_tag( @articleE.thumb.url(:square) , :class => 'columns-article-img'), @articleE %>
+    <div class="columns-article-content">
+      <p class="h1"><%=link_to @articleE.title,@articleE %></p>
+      <hr style="border-color:black;">
+      <p class="h3"><%= @articleE.summary %></p>
+    </div>
+  </div>
+<% end %>

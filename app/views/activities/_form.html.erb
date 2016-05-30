@@ -1,0 +1,78 @@
+<% if @activity.errors.count > 0 %>
+	<p class="alert alert-warning formalert">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<% @activity.errors.each do |attr,msg|  %>
+			<%= msg %><br>
+		<% end %>
+	</p>
+<% end %>
+
+<%= form_for @activity, :html => {:class => "form"} do |f| %>
+	<div class="form-group">
+		<%= f.label :title, '標題: ' %>
+		<%= f.text_field :title , :class =>"form-control" %><br><br>
+	</div>
+  <div class="form-group">
+		<%= f.label :place, '地點: ' %>
+		<%= f.text_field :place , :class =>"form-control" %><br><br>
+	</div>
+  <div class="form-group">
+		<%= f.label :date, '時間: ' %>
+		<%= f.date_field :date , :class =>"form-control" %><br><br>
+	</div>
+	<div class="form-group">
+		<%= f.label :category, '分類: ' %>
+		<%= f.select :category, %w[沙龍 年會] , :class =>"form-control" %><br><br>
+	</div>
+	<div class="form-group">
+		<div id="preview"></div><br>
+		<%= f.label :thumb, '縮圖: ' %>
+		<%= f.file_field :thumb , :class =>"form-control",:id =>'pictureupload' %><br><br>
+	</div>
+	<div class="form-group">
+		<%= f.label :summary, '摘要: ' %>
+		<%= f.text_area :summary, :class =>"form-control" ,:id => 'textarea'%><br>
+		<p>目前 <span id="count">0</span> 字</p><br><br>
+	</div>
+	<div class="form-group">
+		<%= f.text_area :content, class: 'tinymce' %><br>
+		<%= f.submit '建立', :class =>"btn btn-default" %>
+	</div>
+<% end %>
+
+
+<script>
+	$(document).ready(function () {
+    	tinyMCE.remove();
+    	tinyMCE.init({
+			selector: "textarea.tinymce",
+			toolbar: ["fullscreen | undo redo | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table | link unlink image media | emoticons | hr nonbreaking","formatselect | fontsizeselect | bold italic underline strikethrough | subscript superscript | forecolor backcolor | removeformat | preview"],
+			plugins: "advlist,autolink,lists,link,image,charmap,preview,hr,anchor,searchreplace,visualblocks,visualchars,code,fullscreen,insertdatetime,media,nonbreaking,table,contextmenu,textcolor,colorpicker",
+			menubar: false
+		});
+
+		$('#pictureupload').on('change', function(event) {
+	    	var files = event.target.files;
+	    	var image = files[0]
+	    	var reader = new FileReader();
+		    reader.onload = function(file){
+		      var img = new Image();
+		      img.src = file.target.result;
+		      $('#preview').html(img);
+		    }
+	    	reader.readAsDataURL(image);
+	  	});
+
+			var area = document.getElementById('textarea');
+			var count = document.getElementById('count');
+			Countable.live(area, function (counter) {
+				if(counter['all']>150){
+					count.style.color = 'red';
+				}
+				else {
+					count.style.color = 'black';
+				}
+  			count.innerHTML=counter['all'];
+			})
+	});
+</script>

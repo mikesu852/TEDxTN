@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="row">
+		<% @picture.each do |p| %>
+			<div class="col-md-3 text-center" id="<%= dom_id p %>" >
+				<%= image_tag(p.image_url, :class => 'picture') %>
+				<p><%= p.name %></p>
+				<div class="btn-group" role="group" style="margin:10px auto;">
+					<%= link_to '查看', p,:class => "btn btn-default" %>
+					<%= link_to '刪除', picture_path(p),:class => "btn btn-default", method: :delete,remote: true, data: {confirm: "確定刪除嗎?" } %>
+				</div>
+				<p><%= text_field_tag 'url', p.image_url , :class =>'form-control' %></p>
+			</div>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,42 @@
+  <% @articleA.each do |article| %>
+      <div class="a article">
+          <div class="pic">
+          <%=link_to image_tag( article.thumb_url , :class => 'pic-img'), article %>
+        </div><p id="description" class="h3"><%= article.summary %></p>
+      </div>
+  <% end %>
+  <% @articleB.each do |article| %>
+      <div class="b article">
+          <div class="pic">
+          <%=link_to image_tag( article.thumb_url , :class => 'pic-img'), article %>
+        </div><p id="description" class="h3"><%= article.summary %></p>
+      </div>
+  <% end %>
+  <% @articleC.each do |article| %>
+      <div class="c article">
+          <div class="pic">
+          <%=link_to image_tag( article.thumb_url , :class => 'pic-img'), article %>
+        </div><p id="description" class="h3"><%= article.summary %></p>
+      </div>
+  <% end %>
+  <% @articleD.each do |article| %>
+      <div class="d article">
+          <div class="pic">
+          <%=link_to image_tag( article.thumb_url , :class => 'pic-img'), article %>
+        </div><p id="description" class="h3"><%= article.summary %></p>
+      </div>
+  <% end %>
+  <% @articleE.each do |article| %>
+      <div class="e article">
+          <div class="pic">
+          <%=link_to image_tag( article.thumb_url , :class => 'pic-img'), article %>
+        </div><p id="description" class="h3"><%= article.summary %></p>
+      </div>
+  <% end %>
+  <% @activities.each do |activity| %>
+      <div class="f article">
+          <div class="pic">
+          <%=link_to image_tag( activity.thumb_url , :class => 'pic-img'), activity %>
+        </div><p id="description" class="h3"><%= activity.summary %></p>
+      </div>
+  <% end %>

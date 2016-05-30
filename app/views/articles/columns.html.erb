@@ -1,0 +1,70 @@
+<div class="container-fluid" style="background:rgb(244,244,244);">
+  <div class="row">
+    <div class="col-md-7 col-md-offset-1">
+      <%= render 'columns_article' %>
+    </div>
+    <div class="col-md-2 col-md-offset-1">
+      <ul class="columns-btns">
+        <li id="A">策展觀點</li>
+        <li id="B">十八分放大</li>
+        <li id="C">一百種臺南</li>
+        <li id="D">實踐者</li>
+        <li id="E">值得議題</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<%= render 'articles' %>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $(".b").hide();
+    $(".c").hide();
+    $(".d").hide();
+    $(".e").hide();
+    $(".f").hide();
+    var prev = ".a";
+    $("#A").mouseenter(function () {
+      if (prev != ".a") {
+        $(prev).hide();
+        $(".a").show();
+        prev = ".a";
+      }
+    });
+    $("#B").mouseenter(function () {
+      if (prev != ".b") {
+        $(prev).hide();
+        $(".b").show();
+        prev = ".b";
+      }
+    });
+    $("#C").mouseenter(function () {
+      if (prev != ".c") {
+        $(prev).hide();
+        $(".c").show();
+        prev = ".c";
+      }
+    });
+    $("#D").mouseenter(function () {
+      if (prev != ".d") {
+        $(prev).hide();
+        $(".d").show();
+        prev = ".d";
+      }
+    });
+    $("#E").mouseenter(function () {
+      if (prev != ".e") {
+        $(prev).hide();
+        $(".e").show();
+        prev = ".e";
+      }
+    });
+    $("#F").mouseenter(function () {
+      if (prev != ".f") {
+        $(prev).hide();
+        $(".f").show();
+        prev = ".f";
+      }
+    });
+  });
+</script>

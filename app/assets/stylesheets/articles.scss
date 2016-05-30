@@ -1,0 +1,319 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* 首頁最上方 顯示分類文章區塊 */
+.news{
+  width:100%;
+  background-image:image-url("article/category1.jpg");
+  background-size:100% 100%;
+  padding-bottom:10px;
+  border-bottom:10px solid rgb(171, 47, 23);
+}
+
+.news-row{
+  width:100%;
+}
+.news-row-item{
+  width:50%;
+  display:inline-block;
+}
+
+/* 最熱門文章 */
+#hotarticle{
+  width:60%;
+  margin:40px auto;
+}
+
+#hotarticle-title,#hotarticle-description{
+  color:white;
+}
+
+.hotarticle-img{
+  width:100%;
+}
+
+#hotarticle-title{
+  padding: 10px 10px 10px 0px;
+}
+
+/* 單篇文章區塊 */
+
+.article{
+  margin:40px 20px;
+}
+
+/* 單篇文章照片區塊 */
+
+.pic{
+  width:25%;
+  height:100%;
+  display:inline-block;
+}
+
+/* 單篇文章照片 */
+.pic-img{
+  width:100%;
+}
+
+/* 單篇文章照片介紹 */
+
+#description{
+  padding:10px;
+  vertical-align:top;
+  width:75%;
+  display:inline-block;
+  color:white;
+}
+
+/* 專欄文章分類 */
+.topic{
+  width:100%;
+}
+
+.topic li{
+  margin:30px 0px;
+  text-align:center;
+  width:50%;
+  display:inline-block;
+}
+
+.topic li a{
+  color:white;
+}
+
+/* 各分類附屬的引言 */
+
+.intro{
+  padding:40px 10px;
+  width:80%;
+  height:100px;
+  margin:60px 0px 40px auto;
+  color:white;
+  background:rgba(113, 113, 113, 0.4);
+  text-align:center;
+}
+
+/* 首頁下方文章區塊 */
+
+.articles-part{
+  background:rgb(244,244,244);
+  width:100%;
+	padding-bottom:20px;
+}
+
+.articles-items{
+  width:85%;
+  display:block;
+  margin:0 auto;
+  text-align:center;
+}
+
+.articles-item{
+  position:relative;
+  overflow: hidden;
+  display:inline-block;
+  width:30%;
+  margin:50px 10px;
+}
+
+.articles-item-img{
+  width:100%;
+}
+
+.articles-item-title{
+  text-align:left;
+  background:rgba(171, 47, 23, 0.9);
+  color:white;
+  width:100%;
+  position: absolute;
+  bottom:-20px;
+  padding:8px 8px;
+  opacity:0;
+}
+
+.articles-item-title .h3 a,.articles-item-title .h4,.articles-item-title .h3 a:hover{
+  color:white;
+}
+
+#more-button {
+	color:#757575;
+	padding:10px 0px;
+	margin:0 auto;
+	display:block;
+	border:1px solid #757575;
+	width:120px;
+}
+
+/*單篇文章*/
+.article-ctrl{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.article-meta{
+  display:block;
+  margin-bottom:40px;
+}
+
+.article-title{
+  font-weight:bold;
+  line-height:48px;
+  font-size:32px;
+}
+
+.article-intro{
+  color:rgb(210,60,58);
+  background:rgb(230,230,231);
+  display:block;
+  padding:15px;
+  margin-bottom:40px;
+  border-radius:3px;
+  line-height:32px;
+}
+
+.article-author{
+  display:block;
+  margin-top:100px;
+  font-size:0px;
+}
+
+.article-author-avatar,.article-author-profile{
+  display:inline-block;
+}
+
+.article-author-avatar{
+  width:20%;
+}
+
+.article-author-avatar img{
+  border-radius:50%;
+  width:100%;
+}
+
+.article-author-profile{
+  vertical-align: top;
+  padding:15px 30px;
+  width:80%;
+  font-size:12px;
+}
+
+/*延伸閱讀*/
+
+.more-articles{
+	width:100%;
+	font-size:0px;
+	margin:40px 0px;
+}
+
+.more-article-item{
+	width:25%;
+	display:inline-block;
+	padding:0px 10px;
+	vertical-align: top;
+}
+
+.more-article-item-img{
+	width:100%;
+	margin-bottom:10px;
+}
+
+/* 專欄文章 */
+
+.columns-article{
+  position:relative;
+  width:100%;
+  font-size:0px;
+}
+
+.columns-article-content,.columns-article-img{
+  display:inline-block;
+}
+
+.columns-article-content{
+  position:absolute;
+  padding:30px 25px;
+  height:100%;
+  background:white;
+  vertical-align:top;
+  width:40%;
+  overflow:scroll;
+}
+
+.columns-article-img{
+  width:60%;
+}
+
+.columns-btns{
+  width:80%;
+  display:block;
+  margin-top:20%;
+  float:right;
+}
+
+.columns-btns li{
+  text-align:center;
+  border:1px solid;
+  padding:15px 5px;
+  margin-top:15px;
+}
+
+/* RWD */
+
+@media screen and (max-width:991px){
+  .columns-btns-desktop{
+    display:none;
+  }
+  .columns-btns{
+    text-align:center;
+    width:100%;
+    margin-top:0;
+  }
+  .columns-btns li{
+    padding:15px 10px;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:768px){
+	.news-row-item{
+		width:100%;
+	}
+
+  .intro{
+    margin:40px auto;
+  }
+
+  #hotarticle{
+    width:90%;
+  }
+
+  .pic{
+    width:40%;
+  }
+
+  #description{
+    width:60%;
+  }
+
+	.articles-items{
+    width:90%;
+		font-size:0px;
+	}
+
+  .articles-item{
+    width:48%;
+    margin:25px 1%;
+  }
+
+  .articles-item-title .h4{
+    display:none;
+  }
+
+  .columns-article-content{
+    width:100%;
+    position:relative;
+  }
+  .columns-article-img{
+    width:100%;
+  }
+}

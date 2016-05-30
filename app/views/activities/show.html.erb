@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<% if current_user %>
+			<div class="article-ctrl">
+				<div class="btn-group" role="group" aria-label="...">
+					<%= link_to '編輯',edit_activity_path(@activity), :class => "btn btn-default" %>
+					<%= link_to '刪除',activity_path(@activity),method: :delete,data: { confirm: "確定刪除嗎?" }, :class =>"btn btn-default" %>
+				</div>
+			</div>
+			<% end %>
+			<div class="article-meta">
+				<p class="article-title"><%= @activity.title %></p><br><br>
+			</div>
+			<div class="article-content"><%=raw @activity.content %></div>
+			<div class="article-comment">
+				<div id="disqus_thread"></div>
+					<script>
+					(function() {
+					var d = document, s = d.createElement('script');
+
+					s.src = '//tedxtainan2016.disqus.com/embed.js';
+
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+					})();
+					</script>
+			</div>
+		</div>
+	</div>
+</div>

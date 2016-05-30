@@ -1,0 +1,85 @@
+    <div class="news">
+        <div class="news-row">
+            <div class="news-row-item">
+                <ul class="topic">
+                  <li><a href="#" id="A" class="h1">策展觀點</a></li><li>
+                      <a href="#" id="B" class="h1">十八分放大</a></li><li>
+                      <a href="#" id="C" class="h1">一百種臺南</a></li><li>
+                      <a href="#" id="D" class="h1">實踐者</a></li><li>
+                      <a href="#" id="E" class="h1">值得議題</a></li><li>
+                      <a href="#" id="F" class="h1">活動資訊</a>
+                  </li>
+                </ul>
+            </div><div class="news-row-item" style="vertical-align:top;">
+                <div class="intro">Intro</div>
+            </div>
+        </div>
+        <div class="news-row">
+            <div class="news-row-item">
+                <div id="hotarticle">
+                    <% if @hot %>
+                    <p id="hotarticle-title" class="h1">熱門文章</p>
+                     <%=link_to image_tag(@hot.thumb.url(:large) , :class => 'hotarticle-img'), @hot %>
+                    <p id="hotarticle-title" class="h1"><%= @hot.title %></p>
+                    <p id="hotarticle-description" class="h3"><%= @hot.summary %></p>
+                    <% end %>
+                </div>
+            </div><div class="news-row-item" style="vertical-align:top;">
+              <%= render 'category_article' %>
+            </div>
+        </div>
+    </div>
+    <%= render 'articles' %>
+    <%= @cate %>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".b").hide();
+        $(".c").hide();
+        $(".d").hide();
+        $(".e").hide();
+        $(".f").hide();
+        var prev=".a";
+        $("#A").mouseenter(function(){
+          if(prev!=".a"){
+            $(prev).hide();
+            $(".a").show();
+            prev=".a";
+          }
+        });
+        $("#B").mouseenter(function(){
+          if(prev!=".b"){
+            $(prev).hide();
+            $(".b").show();
+            prev=".b";
+          }
+        });
+        $("#C").mouseenter(function(){
+          if(prev!=".c"){
+            $(prev).hide();
+            $(".c").show();
+            prev=".c";
+          }
+        });
+        $("#D").mouseenter(function(){
+          if(prev!=".d"){
+            $(prev).hide();
+            $(".d").show();
+            prev=".d";
+          }
+        });
+        $("#E").mouseenter(function(){
+          if(prev!=".e"){
+            $(prev).hide();
+            $(".e").show();
+            prev=".e";
+          }
+        });
+        $("#F").mouseenter(function(){
+          if(prev!=".f"){
+            $(prev).hide();
+            $(".f").show();
+            prev=".f";
+          }
+        });
+      });
+    </script>

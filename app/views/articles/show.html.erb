@@ -1,0 +1,51 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<% if current_user %>
+			<div class="article-ctrl">
+				<div class="btn-group" role="group" aria-label="...">
+					<%= link_to '編輯',edit_article_path(@article), :class => "btn btn-default" %>
+					<%= link_to '刪除',article_path(@article),method: :delete,data: { confirm: "確定刪除嗎?" }, :class =>"btn btn-default" %>
+				</div>
+			</div>
+			<% end %>
+			<div class="article-meta">
+				<p class="article-title"><%= @article.title %></p><br><br>
+				<p class="article-author-name h3">作者 | <%= @article.user.name %></p>
+			</div>
+			<% if @article.intro != '' %>
+				<div class="article-intro"><%= @article.intro %></div>
+			<% end %>
+			<div class="article-content"><%=raw @article.content %></div>
+			<div class="article-author">
+				<div class="article-author-avatar"><%= image_tag @article.user.avatar_url(:thumb) %></div>
+				<div class="article-author-profile">
+					<p class="h2">作者 | <%= @article.user.name %></p><br>
+					<p class="h2"><%= @article.user.profile %></p>
+				</div>
+			</div>
+			<div class="more-articles">
+				<h1 class="h1" style="padding-bottom:20px;padding-left:10px;">延伸閱讀</h1>
+				<% @morearticles.each  do |morearticle| %>
+					<div class="more-article-item">
+						<%= link_to image_tag(morearticle.thumb.url(:square) , :class => 'more-article-item-img'), morearticle %>
+						<%= link_to morearticle.title , morearticle , :class => 'more-article-item-title h3'%>
+					</div>
+				<% end %>
+			</div>
+			<div class="article-comment">
+				<div id="disqus_thread"></div>
+					<script>
+					(function() {
+					var d = document, s = d.createElement('script');
+
+					s.src = '//tedxtainan2016.disqus.com/embed.js';
+
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+					})();
+					</script>
+			</div>
+		</div>
+	</div>
+</div>

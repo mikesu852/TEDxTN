@@ -1,0 +1,75 @@
+// Place all the styles related to the films controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.films-part{
+  width:100%;
+	padding-bottom:20px;
+}
+
+.films-items{
+  width:85%;
+  display:block;
+  margin:0 auto;
+  text-align:center;
+}
+
+.films-item{
+  position:relative;
+  overflow: hidden;
+  display:inline-block;
+  width:30%;
+  margin:50px 10px;
+}
+
+.film{
+  width:100%;
+  height:300px;
+  margin-bottom:20px;
+}
+
+.search{
+  width:60%;
+  display: block;
+  margin:50px auto;
+}
+
+.search label{
+  padding-bottom:10px;
+  padding-top:10px;
+}
+
+#label-activity-mobile{
+  display:none;
+}
+
+/* RWD */
+
+@media screen and (max-width:1050px){
+  #label-activity-mobile{
+    display:block;
+  }
+
+  #label-activity-desktop{
+    display:none;
+  }
+
+}
+
+
+@media screen and (max-width:768px){
+  .search{
+    width:90%;
+  }
+
+	.films-items{
+    width:90%;
+		font-size:0px;
+	}
+
+  .films-item{
+    width:100%;
+    margin:25px 1%;
+  }
+
+}
